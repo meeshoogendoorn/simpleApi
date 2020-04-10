@@ -71,7 +71,6 @@
                                             a.setAttribute("class", "autocomplete-items");
                                             /*append the DIV element as a child of the autocomplete container:*/
                                             this.parentNode.appendChild(a);
-                                            @if(env("APP_ENV") == "production")
                                             axios.get("/public/spotify/search/song/" + $(this).val())
                                                 .then(function(response){
                                                     arr = [];
@@ -81,17 +80,6 @@
                                                         arr.push([song.name, song.album.images[2], song.external_urls.spotify, song.duration_ms]);
                                                     }
                                                 });
-                                            @else
-                                            axios.get("/spotify/search/song/" + $(this).val())
-                                                .then(function(response){
-                                                    arr = [];
-                                                    for(let i = 0; i < response.data.items.length; i++){
-                                                        let song = response.data.items[i];
-                                                        console.log(song);
-                                                        arr.push([song.name, song.album.images[2], song.external_urls.spotify, song.duration_ms]);
-                                                    }
-                                                });
-                                            @endif
 
                                             /*for each item in the array...*/
                                             for (let i = 0; i < arr.length; i++) {
