@@ -21,7 +21,7 @@ Auth::routes(["register" => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get("spotify/search/song/{song}", "SpotifyController@searchSong");
-Route::get("spotify/search/artist/{artist}", "SpotifyController@searchArtist");
+Route::get("spotify/search/song/{song}", "SpotifyController@searchSong")->name("search.song");
+Route::get("spotify/search/artist/{artist}", "SpotifyController@searchArtist")->name("search.artist");
 Route::resource("songs", "SongController");
 Route::resource("sources", "SourceController");
