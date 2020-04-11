@@ -71,7 +71,7 @@
                                             a.setAttribute("class", "autocomplete-items");
                                             /*append the DIV element as a child of the autocomplete container:*/
                                             this.parentNode.appendChild(a);
-                                            axios.get("/public/spotify/search/song/" + $(this).val())
+                                            axios.get("/spotify/search/song/" + $(this).val())
                                                 .then(function(response){
                                                     arr = [];
                                                     for(let i = 0; i < response.data.items.length; i++){
