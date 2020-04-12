@@ -1,19 +1,26 @@
-@extends('layouts.app')
+@extends('layouts.app', ["title" => __("Add song")])
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+    @include('users.partials.header', [
+       'title' => __('Hello') . ' '. auth()->user()->name,
+       'description' => __('On this page you can add new spotify listed on Spotify to the system.'),
+       'class' => 'col-lg-7'
+   ])
+    <div class="container-fluid mt--7">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Songs</h3>
                             </div>
-                        @endif
-
+                            <div class="col-4 text-right">
+                                <a href="{{route("songs.index")}}" class="btn btn-sm btn-primary">List Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
                         <form action="{{route("songs.store")}}" method="POST" autocomplete="off">
                             @method("post")
                             @csrf
@@ -176,18 +183,23 @@
                             @endpush
                         </form>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-3 order-xl-1" id="artist-card" style="display: none;">
-                <div class="artist__thumbnail">
-                    <img class="artist__blur" src="#">
-                    <img class="artist__image" src="#">
-                    <div class="artist__ring"></div>
-                    <div class="artist__ring artist__ring--outer"></div>
-                </div>
-                <div class="artist__label">
-                    <p id="artist_name_paragraph">Rival Consoles</p>
-                    <a target="_blank" href="#" class="btn btn-outline-success" id="artist_uri_btn">SEE SONG</a>
+                    <div class="card-footer py-4">
+                        <div class="col-xl-3 order-xl-1" id="artist-card" style="display: none;">
+                            <div class="artist__thumbnail">
+                                <img class="artist__blur" src="#">
+                                <img class="artist__image" src="#">
+                                <div class="artist__ring"></div>
+                                <div class="artist__ring artist__ring--outer"></div>
+                            </div>
+                            <div class="artist__label">
+                                <p id="artist_name_paragraph">Rival Consoles</p>
+                                <a target="_blank" href="#" class="btn btn-outline-success" id="artist_uri_btn">SEE SONG</a>
+                            </div>
+                        </div>
+                        <nav class="d-flex justify-content-end" aria-label="...">
+
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

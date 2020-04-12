@@ -25,3 +25,13 @@ Route::get("spotify/search/song/{song}", "SpotifyController@searchSong")->name("
 Route::get("spotify/search/artist/{artist}", "SpotifyController@searchArtist")->name("search.artist");
 Route::resource("songs", "SongController");
 Route::resource("sources", "SourceController");
+Route::resource("servers", "ServerController");
+
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+});
+

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Server;
-use Illuminate\Http\Request;
+use App\Song;
+use App\Source;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -20,12 +22,17 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return View
      */
     public function index()
     {
-        $servers = Server::all();
+        $totalStreams = DB::table("songs")->sum("streams");
+        $totalSongs = DB::table("songs")->count();
+        $totalServers = DB::table("servers")->count();
+        $totalSources = DB::table("sources")->count();
+        $sources = Source::latest()->take(5)->get();
+        $songs = Song::latest()->take(5)->get();
 
-        return view('home', compact("servers"));
+        return view('dashboard', compact("totalStreams", "totalSongs", "totalServers", "totalSources","sources", "songs"));
     }
 }

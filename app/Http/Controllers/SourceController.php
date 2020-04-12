@@ -6,6 +6,7 @@ use App\Server;
 use App\Song;
 use App\Source;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SourceController extends Controller
 {
@@ -31,6 +32,14 @@ class SourceController extends Controller
 
     public function store(Request $request)
     {
+        $combinationOfSourceExists = DB::table("sources")
+            ->where("song_id", "=", $request->get("song_id"))
+            ->where("server_id", "=", $request->get("server_id"))
+            ->exists();
+
+        if($combinationOfSourceExists)
+            return redirect()->back()->with("error", "Source combination already exists");
+
         $source = new Source($request->all());
         $source->save();
 

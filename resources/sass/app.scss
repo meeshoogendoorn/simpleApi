@@ -1,12 +1,11 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
+.alert-fixed {
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    width: 20%;
+    z-index:9999;
+    //border-radius:0px
+}
 
 .autocomplete {
     /*the container must be positioned relative:*/
