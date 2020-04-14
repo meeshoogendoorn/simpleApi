@@ -22,3 +22,4 @@ Route::post("connect", "Api\ServerController@connect");
 Route::get("tracks", "Api\ServerController@getTracks");
 Route::post("track/stream", "Api\TrackController@addStream");
 Route::get("track/length", "Api\TrackController@getTrackLength");
+Route::get("restart", "Api\ServerController@getRestart");

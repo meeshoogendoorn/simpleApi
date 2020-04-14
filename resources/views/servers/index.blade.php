@@ -34,6 +34,9 @@
                                     <td>
                                        {{$server->server_name}}
                                     </td>
+                                    <td>
+                                         <a class="btn btn-outline-danger" href="{{ route("server.restart", $server->id) }}">RESTART SERVER</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

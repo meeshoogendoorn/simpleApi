@@ -14,4 +14,9 @@ class Server extends Model
     {
         return $this->hasMany("App\Source");
     }
+
+    public function restarts()
+    {
+        return $this->hasMany("App\Restart", "server_id", "id");
+    }
 }

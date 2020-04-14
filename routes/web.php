@@ -26,6 +26,7 @@ Route::get("spotify/search/artist/{artist}", "SpotifyController@searchArtist")->
 Route::resource("songs", "SongController");
 Route::resource("sources", "SourceController");
 Route::resource("servers", "ServerController");
+Route::get("/server/restart/{server_id}", "ServerController@restart")->name("server.restart");
 
 
 Route::group(['middleware' => 'auth'], function () {

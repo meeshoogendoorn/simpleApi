@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Restart;
 use App\Server;
 use App\Song;
 use App\Source;
@@ -40,8 +41,13 @@ class SourceController extends Controller
         if($combinationOfSourceExists)
             return redirect()->back()->with("error", "Source combination already exists");
 
+
         $source = new Source($request->all());
         $source->save();
+
+        $restart = new Restart();
+        $restart->server_id = $request->get("server_id");
+        $restart->save();
 
         return redirect()->back()->with("success", "Stored source successfully");
     }

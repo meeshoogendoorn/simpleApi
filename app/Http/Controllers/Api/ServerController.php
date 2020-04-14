@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Restart;
 use App\Server;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -41,5 +42,22 @@ class ServerController
         if(empty($tracks))
             $success = "empty";
         return response()->json(["success" => $success, "data" => $tracks]);
+    }
+
+    public function getRestart(Request $request)
+    {
+        $key = $request->get("key");
+
+        $server = Server::where("key", "=", $key)->first();
+
+        foreach($server->restarts as $restart){
+            if($restart->restart){
+                $restart->restart = false;
+                $restart->save();
+                return response()->json(["restart" => true]);
+            }
+        }
+
+        return response()->json(["restart" => false]);
     }
 }
