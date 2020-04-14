@@ -56,7 +56,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <form method="POST" action="{{route("sources.destroy", $source->song->id)}}">
+                                        <form method="POST" action="{{route("sources.destroy", $source->id)}}">
                                             @csrf
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-outline-danger">DELETE</button>

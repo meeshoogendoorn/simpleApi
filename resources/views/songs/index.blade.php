@@ -28,7 +28,7 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col">Server Name</th>
+                                <th scope="col">Title</th>
                                 <th scope="col">Song Length (in seconds)</th>
                                 <th scope="col">Streams</th>
                                 <th scope="col">Progress</th>

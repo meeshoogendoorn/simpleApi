@@ -27,6 +27,11 @@ class SongController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            "title" => "required",
+            "uri" => "required|unique:songs",
+            "length" => "required",
+        ]);
         $song = new Song($request->all());
         $song->save();
 
@@ -36,6 +41,9 @@ class SongController extends Controller
     public function destroy($song_id)
     {
         $song = Song::findOrFail($song_id);
+        $sources = Source::all()->where("song_id", "=", $song->id);
+        foreach($sources as $source)
+            $source->delete();
         $song->delete();
 
         return redirect()->back()->with("success", "Successfully deleted song");
