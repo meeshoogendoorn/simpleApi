@@ -36,6 +36,10 @@ class ServerController
             $track = $source->song->uri;
             array_push($tracks, $track);
         }
-        return response()->json(["success" => true, "data" => $tracks]);
+
+        $success = true;
+        if(empty($tracks))
+            $success = "empty";
+        return response()->json(["success" => $success, "data" => $tracks]);
     }
 }
