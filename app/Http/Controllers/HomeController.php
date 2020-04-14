@@ -31,7 +31,7 @@ class HomeController extends Controller
         $totalServers = DB::table("servers")->count();
         $totalSources = DB::table("sources")->count();
         $sources = Source::latest()->take(5)->get();
-        $songs = Song::latest()->take(5)->get();
+        $songs = Song::orderBy("streams", "desc")->limit(10)->get();
 
         return view('dashboard', compact("totalStreams", "totalSongs", "totalServers", "totalSources","sources", "songs"));
     }
