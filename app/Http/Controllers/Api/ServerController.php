@@ -60,4 +60,19 @@ class ServerController
 
         return response()->json(["restart" => false]);
     }
+
+    public function getServerInfo(Request $request)
+    {
+        $key = $request->get("key");
+
+        $server = Server::where("key", "=", $key)->first();
+
+        return response()->json([
+            "success" => true,
+            "data" => [
+                "players" => (empty($server->info->players) ? 12 : $server->info->players),
+                "max_play_time" => (empty($server->info->max_play_time) ? 400 : $server->info->max_play_time)
+            ]
+        ]);
+    }
 }

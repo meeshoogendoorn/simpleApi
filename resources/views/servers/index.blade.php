@@ -26,6 +26,7 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">Server Name</th>
+                                <th class="server_key" style="display: none;">Server key</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -34,9 +35,14 @@
                                     <td>
                                        {{$server->server_name}}
                                     </td>
+                                    <td style="display: none;" class="server_key">
+                                        {{ $server->key }}
+                                    </td>
                                     <td>
                                         <div class="row">
-                                         <a class="btn btn-outline-danger" href="{{ route("server.restart", $server->id) }}">RESTART SERVER</a>
+                                        <a id="showKeyButton" class="btn btn-outline-dark">SHOW KEY</a>
+                                         <a class="btn btn-outline-danger" href="{{ route("server.restart", $server->id) }}">RESTART</a>
+                                         <a class="btn btn-outline-primary" href="{{ route("server.info.edit", $server->id) }}">CONFIGURE</a>
                                         <form method="POST" action="{{route("servers.destroy", $server->id)}}">
                                             @csrf
                                             {{ method_field('DELETE') }}
@@ -46,6 +52,14 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @push("js")
+                                <script>
+                                    $("#showKeyButton").on("click", function (e) {
+                                        e.preventDefault();
+                                        $(".server_key").toggle();
+                                    })
+                                </script>
+                            @endpush
                             </tbody>
                         </table>
                     </div>

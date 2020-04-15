@@ -27,6 +27,8 @@ Route::resource("songs", "SongController");
 Route::resource("sources", "SourceController");
 Route::resource("servers", "ServerController");
 Route::get("/server/restart/{server_id}", "ServerController@restart")->name("server.restart");
+Route::get("server/info/{server_id}", "ServerController@editServerInfo")->name("server.info.edit");
+Route::put("server/info/{server_info_id}", "ServerController@updateServerInfo")->name("server.info.update");
 
 
 Route::group(['middleware' => 'auth'], function () {
