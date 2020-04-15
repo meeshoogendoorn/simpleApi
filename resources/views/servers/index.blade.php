@@ -35,7 +35,14 @@
                                        {{$server->server_name}}
                                     </td>
                                     <td>
+                                        <div class="row">
                                          <a class="btn btn-outline-danger" href="{{ route("server.restart", $server->id) }}">RESTART SERVER</a>
+                                        <form method="POST" action="{{route("servers.destroy", $server->id)}}">
+                                            @csrf
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" class="btn btn-outline-warning">DELETE</button>
+                                        </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
