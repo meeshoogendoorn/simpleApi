@@ -37,6 +37,7 @@ class UserController extends Controller
             return redirect()->back()->with("error", "no permission");
 
         $user = new User($request->all());
+        $user->password = Hash::make($user->password);
         $user->save();
 
         return redirect()->route("users.index")->with("success", "Successfully registered new user");
@@ -44,6 +45,9 @@ class UserController extends Controller
 
     public function destroy($user_id)
     {
+        if(! auth()->user()->admin)
+            return redirect()->back()->with("error", "no permission");
+
         $user = User::findOrFail($user_id);
         $user->delete();
 
