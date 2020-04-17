@@ -70,7 +70,7 @@ class SongController extends Controller
     {
         $users = User::all();
         $song = Song::findOrFail($song_id);
-        if(! auth()->user()->admin)
+        if(! $this->checkOwner($song))
             return redirect()->back()->with("error", "no permission");
 
         return view("songs.edit", compact("users", "song"));
@@ -78,7 +78,8 @@ class SongController extends Controller
 
     public function setOwners($song_id, Request $request)
     {
-        if(! auth()->user()->admin)
+        $song = Song::findOrFail($song_id);
+        if(! $this->checkOwner($song))
             return redirect()->back()->with("error", "No permission");
 
         DB::table("track_owners")->where("song_id", "=", $song_id)->delete();
