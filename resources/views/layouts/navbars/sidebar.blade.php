@@ -73,6 +73,13 @@
                         <i class="ni ni-key-25 text-info"></i> {{ __('Sources') }}
                     </a>
                 </li>
+                @if(auth()->user()->admin)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route("users.index")}}">
+                            <i class="ni ni-ungroup text-info"></i> {{ __('Gebruikers') }}
+                        </a>
+                    </li>
+                @endif
             </ul>
             <!-- Divider -->
             <hr class="my-3">

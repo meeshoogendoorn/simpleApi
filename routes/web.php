@@ -26,6 +26,7 @@ Route::get("spotify/search/artist/{artist}", "SpotifyController@searchArtist")->
 Route::resource("songs", "SongController");
 Route::resource("sources", "SourceController");
 Route::resource("servers", "ServerController");
+Route::resource("users", "UserController");
 Route::get("/server/restart/{server_id}", "ServerController@restart")->name("server.restart");
 Route::get("server/info/{server_id}", "ServerController@editServerInfo")->name("server.info.edit");
 Route::put("server/info/{server_info_id}", "ServerController@updateServerInfo")->name("server.info.update");

@@ -8,14 +8,45 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the users
-     *
-     * @param  \App\User  $model
-     * @return \Illuminate\View\View
-     */
+    public function __construct()
+    {
+        $this->middleware("auth");
+    }
+
     public function index(User $model)
     {
-        return view('users.index');
+        if(! auth()->user()->admin)
+            return redirect()->back()->with("error", "no permission");
+
+        $users = User::all();
+
+        return view('users.index', compact("users"));
+    }
+
+    public function create()
+    {
+        if(! auth()->user()->admin)
+            return redirect()->back()->with("error", "no permission");
+
+        return view("auth.register");
+    }
+
+    public function store(UserRequest $request)
+    {
+        if(! auth()->user()->admin)
+            return redirect()->back()->with("error", "no permission");
+
+        $user = new User($request->all());
+        $user->save();
+
+        return redirect()->route("users.index")->with("success", "Successfully registered new user");
+    }
+
+    public function destroy($user_id)
+    {
+        $user = User::findOrFail($user_id);
+        $user->delete();
+
+        return redirect()->back()->with("success", "Successfully deleted user");
     }
 }

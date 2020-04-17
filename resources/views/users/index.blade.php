@@ -3,7 +3,7 @@
 @section('content')
     @include('users.partials.header', [
        'title' => __('Hello') . ' '. auth()->user()->name,
-       'description' => __('This is the servers page, Here you can find all the servers connected to the system'),
+       'description' => __('This is the users page, Here you can find all the users registered in the system'),
        'class' => 'col-lg-7'
    ])
     <div class="container-fluid mt--7">
@@ -13,7 +13,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Servers</h3>
+                                <h3 class="mb-0">Users</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="{{route("users.create")}}" class="btn btn-sm btn-primary">Create User</a>
                             </div>
                         </div>
                     </div>
@@ -25,41 +28,37 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col">Server Name</th>
-                                <th class="server_key" style="display: none;">Server key</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">admin</th>
+                                <th scope="col">Created at</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($servers as $server)
+                            @foreach($users as $user)
                                 <tr>
+                                    <th>
+                                        {{$user->name}}
+                                    </th>
                                     <td>
-                                       {{$server->server_name}}
+                                        {{ $user->email }}
                                     </td>
-                                    <td style="display: none;" class="server_key">
-                                        {{ $server->key }}
-                                    </td>
+                                    <td><i class="ni ni-check-bold @if($user->admin) text-success @else text-danger @endif"></i></td>
+                                    @php
+                                        \Carbon\Carbon::setLocale("nl");
+                                        setlocale(LC_TIME, "nl");
+                                        $date = \Carbon\Carbon::parse($user->created_at)->timezone("Europe/Amsterdam")->format("D, d M Y - H:i")
+                                    @endphp
+                                    <td>{{ $date }}</td>
                                     <td>
-                                        <div class="row">
-                                        <a id="showKeyButton" class="btn btn-outline-dark">SHOW KEY</a>
-                                         <a class="btn btn-outline-danger" href="{{ route("server.restart", $server->id) }}">RESTART</a>
-                                         <a class="btn btn-outline-primary" href="{{ route("server.info.edit", $server->id) }}">CONFIGURE</a>
-                                        <form method="POST" action="{{route("servers.destroy", $server->id)}}">
+                                        <form method="POST" action="{{route("users.destroy", $user->id)}}">
                                             @csrf
                                             {{ method_field('DELETE') }}
-                                            <button type="submit" class="btn btn-outline-warning">DELETE</button>
+                                            <button type="submit" class="btn btn-outline-danger">DELETE</button>
                                         </form>
-                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
-                            @push("js")
-                                <script>
-                                    $("#showKeyButton").on("click", function (e) {
-                                        e.preventDefault();
-                                        $(".server_key").toggle();
-                                    })
-                                </script>
-                            @endpush
                             </tbody>
                         </table>
                     </div>
