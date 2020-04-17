@@ -55,12 +55,12 @@ class HomeController extends Controller
     public function getSourcesCount()
     {
         if(auth()->user()->admin)
-            $totalSources = DB::table("sources")->count();
+            return DB::table("sources")->count();
 
         $tempSources = Source::all();
         $sources = [];
         foreach ($tempSources as $source){
-            if($source->server()->hasOwner(auth()->user()->id)){
+            if($source->server->hasOwner(auth()->user()->id)){
                 array_push($sources, $source);
             }
         }
