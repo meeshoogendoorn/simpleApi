@@ -23,13 +23,10 @@ class ServerController extends Controller
         $tempServers = Server::all();
         $servers = [];
         foreach($tempServers as $server) {
-            if ($server->hasOwner(auth()->user()->id)) {
+            if ($this->checkOwner($server)) {
                 array_push($servers, $server);
             }
         }
-
-        if(auth()->user()->admin)
-            $servers = Server::all();
 
         return view("servers.index", compact("servers"));
     }
@@ -81,6 +78,7 @@ class ServerController extends Controller
     {
         $serverInfo = ServerInfo::findOrFail($server_info_id);
         $server = Server::findOrFail($serverInfo->server_id);
+
         if(! $this->checkOwner($server))
             return redirect()->back()->with("error", "No access to delete this server");
 

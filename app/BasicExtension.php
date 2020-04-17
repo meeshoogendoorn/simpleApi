@@ -10,7 +10,7 @@ class BasicExtension extends Model
         if($type === "server")
             return (bool) $this->owners()->where("user_id", $id)->count();
         elseif ($type === "song")
-            return (bool) $this->songOwnership()->where("user_id", $id)->count();
+            return (bool) $this->owners()->where("user_id", $id)->count();
         else
             return false;
     }

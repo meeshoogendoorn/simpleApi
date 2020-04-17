@@ -61,11 +61,16 @@
                                     </td>
                                     <td><a target="_blank" href="{{$song->uri}}" class="btn btn-outline-success">OPEN</a></td>
                                     <td>
-                                        <form method="POST" action="{{route("songs.destroy", $song->id)}}">
-                                            @csrf
-                                            {{ method_field('DELETE') }}
-                                            <button type="submit" class="btn btn-outline-danger">DELETE</button>
-                                        </form>
+                                        <div class="row">
+                                            @if(auth()->user()->admin)
+                                            <a class="btn btn-outline-primary" href="{{ route("songs.edit", $song->id) }}">CHANGE OWNERSHIP</a>
+                                            @endif
+                                            <form method="POST" action="{{route("songs.destroy", $song->id)}}">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-outline-danger">DELETE</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

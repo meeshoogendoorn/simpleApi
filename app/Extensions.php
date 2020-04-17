@@ -3,7 +3,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Extensions extends Authenticatable{
+class Extensions extends Authenticatable {
 
     function hasRight($id, $type="server"){
         if($type === "server")
