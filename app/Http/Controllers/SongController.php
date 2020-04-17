@@ -94,6 +94,18 @@ class SongController extends Controller
         return redirect()->back()->with("success", "Successfully updated song owners");
     }
 
+    public function setStreams($song_id, Request $request)
+    {
+        $song = Song::findOrFail($song_id);
+        if(! $this->checkOwner($song))
+            return redirect()->back()->with("error", "No permission");
+
+        $song->streams = $request->get("streams");
+        $song->save();
+
+        return redirect()->back()->with("success", "Successfully updated stream amount");
+    }
+
     public function checkOwner($song)
     {
         if(auth()->user()->admin)

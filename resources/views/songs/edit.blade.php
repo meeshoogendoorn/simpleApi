@@ -13,7 +13,7 @@
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
-                            <h3 class="col-12 mb-0">{{ __('Change ownership for a song') }}</h3>
+                            <h3 class="col-12 mb-0">{{ __('Editing ') . $song->title }}</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -30,6 +30,18 @@
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success mt-4">{{ __('Change ownership') }}</button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <form method="post" action="{{ route("songs.streams.set", $song->id) }}" autocomplete="off">
+                            @csrf
+                            @method('put')
+                            <div class="form-group">
+                                <label for="select-owner">Streams</label>
+                               <input class="form-control" type="number" value="{{ $song->streams }}" name="streams" required />
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success mt-4">{{ __('Set streams') }}</button>
                             </div>
                         </form>
                     </div>
