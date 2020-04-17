@@ -59,6 +59,24 @@
                                 </div>
                             </div>
                         </form>
+                        @if(auth()->user()->admin)
+                        <hr class="my-3">
+                        <form method="post" action="{{ route("servers.owners.set", $info->server_id) }}" autocomplete="off">
+                            @csrf
+                            @method('put')
+                                <div class="form-group">
+                                    <label for="select-owner">Select Owners</label>
+                                    <select multiple name="select-owner[]" class="form-control" id="select-owner">
+                                        @foreach($users as $user)
+                                            <option @if($user->hasRight($info->server_id, "server")) selected @endif value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success mt-4">{{ __('Change ownership') }}</button>
+                                </div>
+                        </form>
+                        @endif
                     </div>
                 </div>
             </div>

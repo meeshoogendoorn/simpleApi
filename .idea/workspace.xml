@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/server_info/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Extensions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Server.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/servers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/servers/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/server_info/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/server_info/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/argon/img/brand" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -162,14 +162,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/public/argon/img/brand" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/argon/img/brand" />
       <recent name="$PROJECT_DIR$/resources/views/songs" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/argon/img/brand" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,7 +193,8 @@
       <workItem from="1586512606720" duration="1828000" />
       <workItem from="1586541587588" duration="13070000" />
       <workItem from="1586850934892" duration="4410000" />
-      <workItem from="1586869733421" duration="4719000" />
+      <workItem from="1586869733421" duration="4964000" />
+      <workItem from="1587037410421" duration="6744000" />
     </task>
     <servers />
   </component>
@@ -200,14 +202,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="634" y="322" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586618275290">
+    <state x="634" y="322" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587113290665">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="322" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1586618275290" />
-    <state x="714" y="490" key="NewPhpFileDialog" timestamp="1586940729735">
+    <state x="634" y="322" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587113290665" />
+    <state x="714" y="490" key="NewPhpFileDialog" timestamp="1587061255014">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1586940729735" />
+    <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587061255014" />
     <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1586869733569">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -216,9 +218,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="554" y="317" width="683" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1586942839838" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1586944121870">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1587113518110">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1586944121870" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1587113518110" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.23.1792.1015@0.23.1792.1015" timestamp="1587037912015" />
   </component>
 </project>

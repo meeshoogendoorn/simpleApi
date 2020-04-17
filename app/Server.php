@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Server extends Model
+class Server extends BasicExtension
 {
     protected $table = "servers";
 
@@ -24,4 +24,11 @@ class Server extends Model
     {
         return $this->hasOne("App\ServerInfo", "server_id", "id");
     }
+
+    public function owners()
+    {
+        return $this->hasMany("App\ServerOwner", "server_id", "id");
+    }
+
+
 }
