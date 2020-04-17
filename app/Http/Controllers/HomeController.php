@@ -60,7 +60,7 @@ class HomeController extends Controller
         $tempSources = Source::all();
         $sources = [];
         foreach ($tempSources as $source){
-            if($source->server->hasOwner(auth()->user()->id)){
+            if($source->server()->hasOwner(auth()->user()->id)){
                 array_push($sources, $source);
             }
         }
