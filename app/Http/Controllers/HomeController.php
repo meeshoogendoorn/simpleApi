@@ -31,7 +31,7 @@ class HomeController extends Controller
         $totalSongs = DB::table("songs")->count();
         $totalServers = $this->getServerCount();
         $totalSources = $this->getSourcesCount();
-        $sources = Source::latest()->take(5)->get();
+        $sources = $this->getSources();
         $songs = Song::orderBy("streams", "desc")->limit(10)->get();
 
         return view('dashboard', compact("totalStreams", "totalSongs", "totalServers", "totalSources","sources", "songs"));
@@ -66,5 +66,23 @@ class HomeController extends Controller
         }
 
         return count($sources);
+    }
+
+    public function getSources()
+    {
+        if(auth()->user()->admin)
+            return $sources = Source::latest()->take(5)->get();
+
+        $tempSources = Source::all();
+        $sources = [];
+        foreach ($tempSources as $source){
+            if($source->server->hasOwner(auth()->user()->id)){
+                if(count($sources) > 5)
+                    return $sources;
+                array_push($sources, $source);
+            }
+        }
+
+        return $sources;
     }
 }
