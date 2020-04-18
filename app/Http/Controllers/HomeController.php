@@ -128,6 +128,9 @@ class HomeController extends Controller
 
     public function getSources()
     {
+        if(auth()->user()->admin)
+            return $sources = Source::latest()->take(5)->get();
+
         $tempSources = Source::all();
         $sources = [];
         foreach($tempSources as $source){

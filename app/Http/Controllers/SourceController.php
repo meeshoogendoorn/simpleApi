@@ -31,6 +31,9 @@ class SourceController extends Controller
             }
         }
 
+        if(auth()->user()->admin)
+            $sources = $tempSources;
+
         return view("sources.index", compact("sources"));
     }
 
