@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SongController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SongController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/songs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/songs/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BasicExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BasicExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SourceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sources/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sources/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +193,8 @@
       <workItem from="1586541587588" duration="13070000" />
       <workItem from="1586850934892" duration="4410000" />
       <workItem from="1586869733421" duration="4964000" />
-      <workItem from="1587037410421" duration="13391000" />
+      <workItem from="1587037410421" duration="13675000" />
+      <workItem from="1587209681509" duration="1376000" />
     </task>
     <servers />
   </component>
@@ -256,18 +260,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587120917247" />
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1586869733569">
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1587209681658">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1586869733569" />
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587209681658" />
     <state x="554" y="317" width="683" height="486" key="find.popup" timestamp="1586942839838">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="554" y="317" width="683" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1586942839838" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1587127161004">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1587211013856">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1587127161004" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1587211013856" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.23.1792.1015@0.23.1792.1015" timestamp="1587037912015" />
   </component>
 </project>

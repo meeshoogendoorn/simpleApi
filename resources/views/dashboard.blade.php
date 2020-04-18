@@ -35,10 +35,10 @@
                                         {{ $source->server->server_name }}
                                     </th>
                                     <td>
-                                        {{ $source->song->title }}
+                                        @if($source->song->permission){{ $source->song->title }}@else <b class="text-danger">No permission</b> @endif
                                     </td>
                                     <td>
-                                        {{ $source->song->streams }}
+                                        @if($source->song->permission){{$source->song->streams}}@else <b class="text-danger">NA</b> @endif
                                     </td>
                                     <td>
                                         @php

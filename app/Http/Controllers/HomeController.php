@@ -45,7 +45,7 @@ class HomeController extends Controller
         $tempServers = Server::all();
         $servers = [];
         foreach($tempServers as $server) {
-            if ($server->hasOwner(auth()->user()->id)) {
+            if ($server->hasOwner()) {
                 array_push($servers, $server);
             }
         }
@@ -63,7 +63,7 @@ class HomeController extends Controller
             if(count($songs) > 5)
                 return $songs;
 
-            if ($song->hasOwner(auth()->user()->id, "song")) {
+            if ($song->hasOwner()) {
                 array_push($songs, $song);
             }
         }
@@ -80,7 +80,7 @@ class HomeController extends Controller
         $songs = [];
 
         foreach($tempSongs as $song){
-            if($song->hasOwner(auth()->user()->id, "song")){
+            if($song->hasOwner()){
                 array_push($songs, $song);
             }
         }
@@ -102,7 +102,7 @@ class HomeController extends Controller
         $songs = [];
 
         foreach($tempSongs as $song){
-            if($song->hasOwner(auth()->user()->id, "song")){
+            if($song->hasOwner()){
                 array_push($songs, $song);
             }
         }
@@ -118,7 +118,7 @@ class HomeController extends Controller
         $tempSources = Source::all();
         $sources = [];
         foreach ($tempSources as $source){
-            if($source->server->hasOwner(auth()->user()->id)){
+            if($source->server->hasOwner()){
                 array_push($sources, $source);
             }
         }
@@ -128,15 +128,17 @@ class HomeController extends Controller
 
     public function getSources()
     {
-        if(auth()->user()->admin)
-            return $sources = Source::latest()->take(5)->get();
-
         $tempSources = Source::all();
         $sources = [];
-        foreach ($tempSources as $source){
-            if($source->server->hasOwner(auth()->user()->id)){
-                if(count($sources) > 5)
-                    return $sources;
+        foreach($tempSources as $source){
+            if(count($sources) > 5)
+                return $sources;
+            $source->song->permission = false;
+            if($source->song->hasOwner()){
+                $source->song->permission = true;
+            }
+
+            if($source->server->hasOwner() || auth()->user()->admin) {
                 array_push($sources, $source);
             }
         }

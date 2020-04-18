@@ -18,7 +18,18 @@ class SourceController extends Controller
 
     public function index()
     {
-        $sources = Source::all();
+        $tempSources = Source::all();
+        $sources = [];
+        foreach($tempSources as $source){
+            $source->song->permission = false;
+            if($source->song->hasOwner()){
+                $source->song->permission = true;
+            }
+
+            if($source->server->hasOwner() || auth()->user()->admin) {
+                array_push($sources, $source);
+            }
+        }
 
         return view("sources.index", compact("sources"));
     }

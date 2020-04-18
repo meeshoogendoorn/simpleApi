@@ -39,8 +39,8 @@
                             @foreach($sources as $source)
                                 <tr>
                                     <td>{{$source->server->server_name}}</td>
-                                    <td>{{$source->song->title}}</td>
-                                    <td>{{$source->song->streams}}</td>
+                                    <td>@if($source->song->permission){{$source->song->title}}@else <b class="text-danger">No permission</b> @endif</td>
+                                    <td>@if($source->song->permission){{$source->song->streams}}@else <b class="text-danger">NA</b> @endif</td>
                                     <td>
                                         @php
                                             $lastStreamBoundaryDate = \Carbon\Carbon::now()->subMinutes(6);
@@ -56,11 +56,13 @@
                                         @endif
                                     </td>
                                     <td>
+                                        @if($source->song->permission)
                                         <form method="POST" action="{{route("sources.destroy", $source->id)}}">
                                             @csrf
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-outline-danger">DELETE</button>
                                         </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
