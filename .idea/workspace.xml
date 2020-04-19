@@ -186,7 +186,7 @@
       <workItem from="1586850934892" duration="4410000" />
       <workItem from="1586869733421" duration="4964000" />
       <workItem from="1587037410421" duration="13675000" />
-      <workItem from="1587209681509" duration="1683000" />
+      <workItem from="1587209681509" duration="1871000" />
     </task>
     <servers />
   </component>
@@ -252,18 +252,19 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587120917247" />
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1587209681658">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state x="573" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1587334498487">
+      <screen x="0" y="23" width="1792" height="1013" />
     </state>
     <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587209681658" />
+    <state x="573" y="365" key="com.intellij.ide.util.TipDialog/0.23.1792.1013@0.23.1792.1013" timestamp="1587334498487" />
     <state x="554" y="317" width="683" height="486" key="find.popup" timestamp="1586942839838">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="554" y="317" width="683" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1586942839838" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1587211013856">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1587334506757">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1587211013856" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1587334506757" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.23.1792.1015@0.23.1792.1015" timestamp="1587037912015" />
   </component>
 </project>

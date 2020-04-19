@@ -35,12 +35,12 @@
                                     <td>
                                        {{$server->server_name}}
                                     </td>
-                                    <td style="display: none;" class="server_key">
+                                    <td style="display: none;" class="server_key_{{$server->id}}">
                                         {{ $server->key }}
                                     </td>
                                     <td>
                                         <div class="row">
-                                        <a id="showKeyButton" class="btn btn-outline-dark">SHOW KEY</a>
+                                        <a data-id="{{$server->id}}" class="showKeyButton btn btn-outline-dark">SHOW KEY</a>
                                          <a class="btn btn-outline-danger" href="{{ route("server.restart", $server->id) }}">RESTART</a>
                                          <a class="btn btn-outline-primary" href="{{ route("server.info.edit", $server->id) }}">CONFIGURE</a>
                                         <form method="POST" action="{{route("servers.destroy", $server->id)}}">
@@ -54,9 +54,10 @@
                             @endforeach
                             @push("js")
                                 <script>
-                                    $("#showKeyButton").on("click", function (e) {
+                                    $(".showKeyButton").on("click", function (e) {
                                         e.preventDefault();
-                                        $(".server_key").toggle();
+                                        let server_id = $(this).attr("data-id");
+                                        $(".server_key_"+server_id).toggle();
                                     })
                                 </script>
                             @endpush
