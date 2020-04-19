@@ -10,6 +10,7 @@ use App\Source;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ServerController extends Controller
 {
@@ -93,7 +94,7 @@ class ServerController extends Controller
 
     public function setOwners($server_id, Request $request)
     {
-        if(! auth()->user()->admin)
+        if(! auth()->user()->admin && ! Session::get("admin"))
             return redirect()->back()->with("error", "No permission");
 
         DB::table("server_owners")->where("server_id", "=", $server_id)->delete();
@@ -110,7 +111,7 @@ class ServerController extends Controller
 
     public function checkOwner($server)
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return true;
         if(! $server->hasOwner(auth()->user()->id))
             return false;

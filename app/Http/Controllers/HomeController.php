@@ -6,6 +6,7 @@ use App\Server;
 use App\Song;
 use App\Source;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -39,7 +40,7 @@ class HomeController extends Controller
 
     public function getServerCount()
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return DB::table("servers")->count();
 
         $tempServers = Server::all();
@@ -54,7 +55,7 @@ class HomeController extends Controller
 
     public function getSongs()
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return Song::orderBy("streams", "desc")->limit(10)->get();
 
         $tempSongs = Song::orderBy("streams", "desc")->get();
@@ -73,7 +74,7 @@ class HomeController extends Controller
 
     public function getStreams()
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return DB::table("songs")->sum("streams");
 
         $tempSongs = Song::all();
@@ -95,7 +96,7 @@ class HomeController extends Controller
 
     public function getSongCount()
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return DB::table("songs")->count();
 
         $tempSongs = Song::all();
@@ -112,7 +113,7 @@ class HomeController extends Controller
 
     public function getSourcesCount()
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return DB::table("sources")->count();
 
         $tempSources = Source::all();
@@ -128,7 +129,7 @@ class HomeController extends Controller
 
     public function getSources()
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return $sources = Source::latest()->take(5)->get();
 
         $tempSources = Source::all();
@@ -147,5 +148,13 @@ class HomeController extends Controller
         }
 
         return $sources;
+    }
+
+    public function setAdmin($result)
+    {
+        $result = (bool) $result;
+        Session::put("admin", $result);
+
+        return redirect()->back();
     }
 }

@@ -56,6 +56,14 @@
                                     <span class="text-muted">{{ __('Remember me') }}</span>
                                 </label>
                             </div>
+                            <hr class="my-3">
+                            <div class="row">
+                            <p class="col-6">login as admin:</p>
+                            <label class="custom-toggle">
+                                <input name="admin" type="checkbox">
+                                <span class="custom-toggle-slider rounded-circle"></span>
+                            </label>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary my-4">{{ __('Sign in') }}</button>
                             </div>

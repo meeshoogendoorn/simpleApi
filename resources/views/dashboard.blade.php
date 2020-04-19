@@ -35,10 +35,10 @@
                                         {{ $source->server->server_name }}
                                     </th>
                                     <td>
-                                        @if($source->song->permission || auth()->user()->admin){{ $source->song->title }}@else <b class="text-danger">No permission</b> @endif
+                                        @if($source->song->permission || auth()->user()->admin && \Illuminate\Support\Facades\Session::get("admin")){{ $source->song->title }}@else <b class="text-danger">No permission</b> @endif
                                     </td>
                                     <td>
-                                        @if($source->song->permission || auth()->user()->admin){{$source->song->streams}}@else <b class="text-danger">NA</b> @endif
+                                        @if($source->song->permission || auth()->user()->admin && \Illuminate\Support\Facades\Session::get("admin")){{$source->song->streams}}@else <b class="text-danger">NA</b> @endif
                                     </td>
                                     <td>
                                         @php

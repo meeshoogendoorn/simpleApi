@@ -33,6 +33,7 @@ Route::put("server/info/{server_info_id}", "ServerController@updateServerInfo")-
 Route::put("server/{server_id}/owners", "ServerController@setOwners")->name("servers.owners.set");
 Route::put("song/{song_id}/owners", "SongController@setOwners")->name("songs.owners.set");
 Route::put("song/{song_id}/streams", "SongController@setStreams")->name("songs.streams.set");
+Route::get("/set/admin/{result}", "HomeController@setAdmin")->name("set.admin");
 
 
 Route::group(['middleware' => 'auth'], function () {

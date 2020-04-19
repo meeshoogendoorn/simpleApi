@@ -8,6 +8,7 @@ use App\TrackOwner;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class SongController extends Controller
 {
@@ -108,7 +109,7 @@ class SongController extends Controller
 
     public function checkOwner($song)
     {
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             return true;
         if($song->hasOwner(auth()->user()->id, "song"))
             return true;

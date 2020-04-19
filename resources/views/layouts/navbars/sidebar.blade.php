@@ -73,7 +73,7 @@
                         <i class="ni ni-key-25 text-info"></i> {{ __('Sources') }}
                     </a>
                 </li>
-                @if(auth()->user()->admin)
+                @if(auth()->user()->admin && \Illuminate\Support\Facades\Session::get("admin"))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route("users.index")}}">
                             <i class="ni ni-ungroup text-info"></i> {{ __('Gebruikers') }}
@@ -85,6 +85,21 @@
             <hr class="my-3">
             <!-- Heading -->
             <ul class="navbar-nav">
+                @if(auth()->user()->admin)
+                    @if(\Illuminate\Support\Facades\Session::get("admin"))
+                        <li class="nav-item">
+                            <a href="{{ route("set.admin", 0) }}" class="nav-link">
+                                <i class="ni ni-time-alarm text-success"></i> {{ __('Switch to user') }}
+                            </a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a href="{{ route("set.admin", 1) }}" class="nav-link">
+                                <i class="ni ni-time-alarm text-danger"></i> {{ __('Switch to admin') }}
+                            </a>
+                        </li>
+                    @endif
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

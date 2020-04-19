@@ -8,6 +8,7 @@ use App\Song;
 use App\Source;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class SourceController extends Controller
 {
@@ -31,7 +32,7 @@ class SourceController extends Controller
             }
         }
 
-        if(auth()->user()->admin)
+        if(auth()->user()->admin && Session::get("admin"))
             $sources = $tempSources;
 
         return view("sources.index", compact("sources"));
@@ -39,8 +40,29 @@ class SourceController extends Controller
 
     public function create()
     {
-        $servers = Server::all();
-        $songs = Song::all();
+
+        $tempServers = Server::all();
+        $servers = [];
+        foreach($tempServers as $server) {
+            if ($server->hasOwner()) {
+                array_push($servers, $server);
+            }
+        }
+
+        if(auth()->user()->admin && Session::get("admin"))
+            $servers = $tempServers;
+
+        $tempSongs = Song::all();
+        $songs = [];
+
+        foreach ($tempSongs as $song){
+            if($song->hasOwner()){
+                array_push($songs, $song);
+            }
+        }
+
+        if(auth()->user()->admin && Session::get("admin"))
+            $songs = $tempSongs;
 
         return view("sources.create", compact("servers", "songs"));
     }
