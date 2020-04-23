@@ -27,7 +27,7 @@ class SourceController extends Controller
                 $source->song->permission = true;
             }
 
-            if($source->server->hasOwner() || auth()->user()->admin) {
+            if($source->server->hasOwner() || Session::get("admin") && auth()->user()->admin) {
                 array_push($sources, $source);
             }
         }

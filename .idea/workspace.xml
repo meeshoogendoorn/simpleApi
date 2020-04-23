@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SongController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SongController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SourceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +189,8 @@
       <workItem from="1586869733421" duration="4964000" />
       <workItem from="1587037410421" duration="13675000" />
       <workItem from="1587209681509" duration="1871000" />
-      <workItem from="1587334496386" duration="2179000" />
+      <workItem from="1587334496386" duration="2369000" />
+      <workItem from="1587559043825" duration="20000" />
     </task>
     <servers />
   </component>
@@ -264,10 +256,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587120917247" />
-    <state x="573" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1587334498487">
-      <screen x="0" y="23" width="1792" height="1013" />
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1587559044472">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587209681658" />
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1587559044472" />
     <state x="573" y="365" key="com.intellij.ide.util.TipDialog/0.23.1792.1013@0.23.1792.1013" timestamp="1587334498487" />
     <state x="554" y="317" width="683" height="486" key="find.popup" timestamp="1587336754793">
       <screen x="0" y="0" width="1792" height="1120" />
