@@ -16,6 +16,7 @@ class TrackController
         ]);
 
         $trackUri = $request->get("track_uri");
+
         try {
             DB::table("songs")
                 ->where("uri", "=", $trackUri)
