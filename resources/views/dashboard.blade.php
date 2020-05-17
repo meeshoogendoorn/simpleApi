@@ -98,7 +98,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 @php
-                                                    $streamPercentage = ceil((100 / 100000) * (int)$song->streams);
+                                                    $streamPercentage = ceil((100 / 100000) * (int) $song->streams);
                                                     $randomColorIndex = array_rand($colorChoices);
                                                 @endphp
                                                 <span class="mr-2">{{$streamPercentage}}%</span>
