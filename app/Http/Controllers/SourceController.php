@@ -35,7 +35,7 @@ class SourceController extends Controller
         if(auth()->user()->admin && Session::get("admin"))
             $sources = $tempSources;
 
-        $sources = $sources->groupBy("server.id");
+        $sources = collect($sources)->groupBy("server.id");
 
         return view("sources.index", compact("sources"));
     }
