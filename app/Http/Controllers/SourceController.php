@@ -19,7 +19,7 @@ class SourceController extends Controller
 
     public function index()
     {
-        $tempSources = Source::all();
+        $tempSources = Source::with("server")->get();
         $sources = [];
         foreach($tempSources as $source){
             $source->song->permission = false;
@@ -34,6 +34,8 @@ class SourceController extends Controller
 
         if(auth()->user()->admin && Session::get("admin"))
             $sources = $tempSources;
+
+        $sources = $sources->groupBy("server.id");
 
         return view("sources.index", compact("sources"));
     }

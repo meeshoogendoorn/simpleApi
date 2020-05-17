@@ -35,7 +35,8 @@ class ServerController
 
         foreach($server->sources as $source) {
             $track = $source->song->uri;
-            array_push($tracks, $track);
+            $trackId = $source->song->id;
+            array_push($tracks, ["track" => $track, "id" => $trackId]);
         }
 
         $success = true;

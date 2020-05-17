@@ -12,19 +12,14 @@ class TrackController
     public function addStream(Request $request)
     {
         $request->validate([
-            "track_uri" => "required"
+            "track_id" => "required"
         ]);
-
-        $trackUri = $request->get("track_uri");
-
         try {
-            DB::table("songs")
-                ->where("uri", "=", $trackUri)
-                ->increment("streams");
-
-            DB::table("songs")
-                ->where("uri", "=", $trackUri)
-                ->update(["updated_at" => Carbon::now()]);
+            $trackId = $request->get("track_id");
+            $song = Song::findOrFail($trackId);
+            $song->streams = $song->streams++;
+            $song->updated_at = Carbon::now();
+            $song->save();
 
             return response()->json(["success" => true, "message" => "Stream count updated"]);
         } catch (\Exception $e){
