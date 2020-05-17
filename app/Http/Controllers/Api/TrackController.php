@@ -17,7 +17,7 @@ class TrackController
         try {
             $trackId = $request->get("track_id");
             $song = Song::findOrFail($trackId);
-            $song->streams = $song->streams++;
+            $song->streams = $song->streams+1;
             $song->updated_at = Carbon::now();
             $song->save();
 
