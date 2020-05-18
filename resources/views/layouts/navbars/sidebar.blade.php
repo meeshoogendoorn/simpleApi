@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route("config.index")}}">
+                        <a class="nav-link" href="{{route("settings.index")}}">
                             <i class="ni ni-settings text-yellow"></i> {{ __('Settings') }}
                         </a>
                     </li>
