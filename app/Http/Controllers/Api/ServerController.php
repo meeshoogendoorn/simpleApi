@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Restart;
 use App\Server;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -29,6 +30,8 @@ class ServerController
     {
         $key = $request->get("key");
         $server = Server::where("key", "=", $key)->first();
+        if(empty($server->info->api_key))
+            return response()->json(["success" => false, "message" => "Api Key not set"]);
         return response()->json(["success" => true, "data" => $server->info->api_key]);
     }
 

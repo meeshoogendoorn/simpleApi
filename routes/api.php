@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post("connect", "Api\ServerController@connect");
 Route::get("tracks", "Api\ServerController@getTracks");
 Route::post("track/stream", "Api\TrackController@addStream");
+Route::post("track/streams/multiple", "Api\TrackController@addMultipleStreamsOnTrack");
 Route::get("track/length", "Api\TrackController@getTrackLength");
 Route::get("restart", "Api\ServerController@getRestart");
 Route::get("info", "Api\ServerController@getServerInfo");

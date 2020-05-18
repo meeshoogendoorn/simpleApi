@@ -27,6 +27,26 @@ class TrackController
         }
     }
 
+    public function addMultipleStreamsOnTrack(Request $request)
+    {
+        $request->validate([
+            "track_id" => "required",
+            "amount_streams" => "required",
+        ]);
+
+        try {
+            $trackId = $request->get("track_id");
+            $song = Song::findOrFail($trackId);
+            $song->streams = $song->streams + (int) $request->get("amount_streams");
+            $song->updated_at = Carbon::now();
+            $song->save();
+
+            return response()->json(["success" => true, "message" => "Stream count updated"]);
+        } catch (\Exception $e){
+            return response()->json(["success" => false]);
+        }
+    }
+
     public function getTrackLength(Request $request){
         $request->validate([
             "song" => "required"
