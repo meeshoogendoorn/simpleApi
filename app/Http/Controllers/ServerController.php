@@ -82,11 +82,12 @@ class ServerController extends Controller
 
         if(! $this->checkOwner($server))
             return redirect()->back()->with("error", "No access to delete this server");
-
         if($request->has("players"))
             $serverInfo->players = $request->get("players");
         if($request->has("max_play_time"))
             $serverInfo->max_play_time = $request->get("max_play_time");
+        if($request->has("api_key"))
+            $serverInfo->api_key = $request->get("api_key");
 
         $serverInfo->save();
         return redirect()->back()->with("success", "Succesfully updated server info");

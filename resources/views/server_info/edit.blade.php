@@ -33,6 +33,16 @@
                             @endif
 
                             <div class="pl-lg-4">
+                                <div class="form-group{{ $errors->has('api_key') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-api_key">{{ __('Api Key Proxy6') }}</label>
+                                    <input type="text" name="api_key" id="input-api_key" class="form-control form-control-alternative{{ $errors->has('api_key') ? ' is-invalid' : '' }}" placeholder="{{ __('API KEY') }}" value="{{ old('api_key', $info->api_key) }}" autofocus>
+
+                                    @if ($errors->has('api_key'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('api_key') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                                 <div class="form-group{{ $errors->has('players') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-players">{{ __('Players (calculated on song)') }}</label>
                                     <input type="number" name="players" id="input-players" class="form-control form-control-alternative{{ $errors->has('players') ? ' is-invalid' : '' }}" placeholder="{{ __('Players for 1 song') }}" value="{{ old('players', $info->players) }}" autofocus>

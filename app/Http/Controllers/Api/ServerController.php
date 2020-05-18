@@ -25,6 +25,13 @@ class ServerController
         return response()->json(["success" => true, "message" => "success", "key" => $key]);
     }
 
+    public function getApiKey(Request $request)
+    {
+        $key = $request->get("key");
+        $server = Server::where("key", "=", $key)->first();
+        return response()->json(["success" => true, "data" => $server->info->api_key]);
+    }
+
     public function getTracks(Request $request, $tracks = [])
     {
         $key = $request->get("key");

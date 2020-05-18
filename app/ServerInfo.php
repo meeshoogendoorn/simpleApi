@@ -8,7 +8,7 @@ class ServerInfo extends Model
 {
     protected $table = "server_info";
 
-    protected $fillable = ["server_id", "players", "max_play_time"];
+    protected $fillable = ["server_id", "players", "max_play_time", "api_key"];
 
     public function server()
     {
