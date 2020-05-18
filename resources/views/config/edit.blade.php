@@ -16,12 +16,12 @@
                                 <h3 class="mb-0">Settings</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{route("config.index")}}" class="btn btn-sm btn-primary">List Settings</a>
+                                <a href="{{route("settings.index")}}" class="btn btn-sm btn-primary">List Settings</a>
                             </div>
                         </div>
                     </div>
                     <div class="container">
-                        <form action="{{route("config.update", $item->id)}}" method="POST" autocomplete="off">
+                        <form action="{{route("settings.update", $item->id)}}" method="POST" autocomplete="off">
                             @method("put")
                             @csrf
                             <div class="form-group{{ $errors->has('key') ? ' has-danger' : '' }}">
