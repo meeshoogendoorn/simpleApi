@@ -76,7 +76,12 @@
                 @if(auth()->user()->admin && \Illuminate\Support\Facades\Session::get("admin"))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route("users.index")}}">
-                            <i class="ni ni-ungroup text-info"></i> {{ __('Gebruikers') }}
+                            <i class="ni ni-ungroup text-info"></i> {{ __('Users') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route("config.index")}}">
+                            <i class="ni ni-settings text-yellow"></i> {{ __('Settings') }}
                         </a>
                     </li>
                 @endif
