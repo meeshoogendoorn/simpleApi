@@ -35,7 +35,7 @@ class ConfigController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());
         }
-        return redirect()->route("config.index")->with("success", "Created new config Item");
+        return redirect()->route("settings.index")->with("success", "Created new config Item");
     }
 
     public function edit($id)
@@ -52,6 +52,6 @@ class ConfigController extends Controller
         $item->value = $request->get("value");
         $item->save();
 
-        return redirect()->route("config.index")->with("success", "Updated config settings");
+        return redirect()->route("settings.index")->with("success", "Updated config settings");
     }
 }
