@@ -9,8 +9,15 @@ class ConfigController
 {
     public function getSettings()
     {
-        $items = Config::all()->pluck("value", "key");
+        $items = Config::all();
+        $result = [];
 
-        return response()->json(["success" => true, "data" => $items]);
+        foreach($items as $item) {
+            if(strpos($item->value, ", ") !== false)
+                $item->value = explode(", ", $item->value);
+            $result[$item->key] = $item->value;
+        }
+
+        return response()->json(["success" => true, "data" => $result]);
     }
 }
