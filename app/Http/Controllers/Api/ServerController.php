@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Restart;
 use App\Server;
+use App\Song;
+use Carbon\Carbon;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -85,5 +87,15 @@ class ServerController
                 "max_play_time" => (empty($server->info->max_play_time) ? 400 : $server->info->max_play_time)
             ]
         ]);
+    }
+
+    public function updateLiveController(Request $request)
+    {
+        $id = $request->get('song');
+        $song = Song::findOrFail($id);
+        $song->updated_at = Carbon::now();
+        $song->save();
+
+        return response()->json(["success" => true, "data" => "Updated"]);
     }
 }

@@ -27,3 +27,4 @@ Route::get("restart", "Api\ServerController@getRestart");
 Route::get("info", "Api\ServerController@getServerInfo");
 Route::get("proxy6/key", "Api\ServerController@getApiKey");
 Route::get("settings", "Api\ConfigController@getSettings");
+Route::get("live/controller", "Api\ServerController@updateLiveController");
