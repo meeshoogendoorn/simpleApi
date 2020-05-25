@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/players/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PlayerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_25_184614_make_value_in_config_nullable.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_25_184614_make_value_in_config_nullable.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +209,7 @@
       <workItem from="1589898256207" duration="506000" />
       <workItem from="1589989251929" duration="1345000" />
       <workItem from="1590393916628" duration="78000" />
-      <workItem from="1590412942326" duration="1914000" />
+      <workItem from="1590412942326" duration="2147000" />
     </task>
     <servers />
   </component>

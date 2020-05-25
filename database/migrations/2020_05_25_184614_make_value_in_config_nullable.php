@@ -14,7 +14,7 @@ class MakeValueInConfigNullable extends Migration
     public function up()
     {
         Schema::table('config', function (Blueprint $table) {
-            $table->string("value")->nullable();
+            $table->string("value")->nullable()->change();
         });
     }
 }
