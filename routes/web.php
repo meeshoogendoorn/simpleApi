@@ -35,6 +35,7 @@ Route::put("song/{song_id}/owners", "SongController@setOwners")->name("songs.own
 Route::put("song/{song_id}/streams", "SongController@setStreams")->name("songs.streams.set");
 Route::get("/set/admin/{result}", "HomeController@setAdmin")->name("set.admin");
 Route::resource("settings", "ConfigController");
+Route::resource("players", "PlayerController");
 
 
 Route::group(['middleware' => 'auth'], function () {

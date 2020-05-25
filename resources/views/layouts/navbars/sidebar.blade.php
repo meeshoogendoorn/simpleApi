@@ -85,6 +85,19 @@
                         </a>
                     </li>
                 @endif
+                @php
+                    $users_with_player_permissions = \App\Config::where("key", "=", "users_with_player_permissions")->first();
+                    if(! empty($users_with_player_permissions)){
+                        $users = explode(",", $users_with_player_permissions->value);
+                    }
+                @endphp
+                @if(auth()->user()->admin && \Illuminate\Support\Facades\Session::get("admin") || in_array(auth()->user()->email, $users))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route("players.create")}}">
+                            <i class="ni ni-credit-card text-yellow"></i> {{ __('Players') }}
+                        </a>
+                    </li>
+                @endif
             </ul>
             <!-- Divider -->
             <hr class="my-3">

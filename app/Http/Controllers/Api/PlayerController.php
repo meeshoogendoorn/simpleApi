@@ -18,4 +18,16 @@ class PlayerController
 
         return response()->json(["success" => true, "data" => $request->all()]);
     }
+
+    public function getPlayer()
+    {
+        $player = Player::all()->filter(function($player){ return $player->active == false; })->random();
+        $result = [
+            "uname" => $player->uname,
+            "email" => $player->email,
+            "passw" => $player->passw,
+        ];
+
+        return response()->json(["success" => true, "data" => $result]);
+    }
 }

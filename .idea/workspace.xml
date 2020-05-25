@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/players/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PlayerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +151,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/players" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -157,16 +161,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/players" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/resources/views/config" />
+      <recent name="$PROJECT_DIR$/public/argon/img/brand" />
+      <recent name="$PROJECT_DIR$/resources/views/songs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/public/argon/img/brand" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/config" />
-      <recent name="$PROJECT_DIR$/public/argon/img/brand" />
-      <recent name="$PROJECT_DIR$/resources/views/songs" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -208,7 +213,9 @@
       <workItem from="1589842924463" duration="3658000" />
       <workItem from="1589897827801" duration="31000" />
       <workItem from="1589898256207" duration="506000" />
-      <workItem from="1589989251929" duration="643000" />
+      <workItem from="1589989251929" duration="1345000" />
+      <workItem from="1590393916628" duration="78000" />
+      <workItem from="1590412942326" duration="1914000" />
     </task>
     <servers />
   </component>
@@ -278,19 +285,19 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1589843166268" />
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1589989259004">
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1590393963425">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1589989259004" />
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1590393963425" />
     <state x="573" y="365" key="com.intellij.ide.util.TipDialog/0.23.1792.1013@0.23.1792.1013" timestamp="1588149433625" />
     <state x="554" y="317" width="683" height="486" key="find.popup" timestamp="1587656661538">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="554" y="317" width="683" height="486" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1587656661538" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1589898412024">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1590425314132">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1589898412024" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1590425314132" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.23.1792.1015@0.23.1792.1015" timestamp="1587037912015" />
   </component>
 </project>
