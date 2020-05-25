@@ -21,13 +21,39 @@ class PlayerController
 
     public function getPlayer()
     {
-        $player = Player::all()->filter(function($player){ return $player->active == false; })->random();
+        $players = Player::all()->filter(function($player){ return $player->active == false; });
+        if($players->isEmpty())
+            return response()->json(["success" => false]);
+
+        $player = $players->random();
+
         $result = [
             "uname" => $player->uname,
             "email" => $player->email,
             "passw" => $player->passw,
         ];
 
+        $player->active = true;
+        $player->save();
+
         return response()->json(["success" => true, "data" => $result]);
+    }
+
+    public function setPlayerInactive(Request $request)
+    {
+        $email = $request->get("email");
+        if(empty($email))
+            return response()->json(["success" => false, "data" => "Email is required"]);
+
+        $player = Player::all()->where("email", "=", $email)->first();
+
+        if(empty($player)){
+            return response()->json(["success" => false, "data" => "player not found"]);
+        }
+
+        $player->active = false;
+        $player->save();
+
+        return response()->json(["success" => true, "data" => "Set to inactive"]);
     }
 }

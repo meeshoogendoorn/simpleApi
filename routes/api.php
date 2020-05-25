@@ -29,4 +29,5 @@ Route::get("proxy6/key", "Api\ServerController@getApiKey");
 Route::get("settings", "Api\ConfigController@getSettings");
 Route::get("live/controller", "Api\ServerController@updateLiveController");
 Route::post("player/create", "Api\PlayerController@createPlayer");
-Route::post("player", "Api\PlayerController@getPlayer");
+Route::get("player", "Api\PlayerController@getPlayer");
+Route::get("player/inactive", "Api\PlayerController@setPlayerInactive");
