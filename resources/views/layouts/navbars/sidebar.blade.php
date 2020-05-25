@@ -87,6 +87,7 @@
                 @endif
                 @php
                     $users_with_player_permissions = \App\Config::where("key", "=", "users_with_player_permissions")->first();
+                    $users = [];
                     if(! empty($users_with_player_permissions)){
                         $users = explode(",", $users_with_player_permissions->value);
                     }
