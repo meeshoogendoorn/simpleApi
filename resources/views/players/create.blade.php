@@ -13,7 +13,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Players</h3>
+                                <h3 class="mb-0">Players (Current amount: <span class="text-green">{{ $count }}</span>)</h3>
                             </div>
                         </div>
                     </div>

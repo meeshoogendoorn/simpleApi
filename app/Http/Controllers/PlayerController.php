@@ -14,7 +14,9 @@ class PlayerController extends Controller
 
     public function create()
     {
-        return view("players.create");
+        $count = Player::all()->count();
+
+        return view("players.create", compact("count"));
     }
 
     public function store(Request $request)
