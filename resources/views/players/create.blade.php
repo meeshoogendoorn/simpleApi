@@ -15,6 +15,9 @@
                             <div class="col-8">
                                 <h3 class="mb-0">Players (Current amount: <span class="text-green">{{ $count }}</span>)</h3>
                             </div>
+                            <div>
+                                <a href="{{route("players.create.bulk")}}" class="btn btn-outline-primary btn-sm">Create players bulk</a>
+                            </div>
                         </div>
                     </div>
                     <div class="container">

@@ -36,6 +36,7 @@ Route::put("song/{song_id}/streams", "SongController@setStreams")->name("songs.s
 Route::get("/set/admin/{result}", "HomeController@setAdmin")->name("set.admin");
 Route::resource("settings", "ConfigController");
 Route::resource("players", "PlayerController");
+Route::get("players/create/bulk", "PlayerController@createBulk")->name("players.create.bulk");
 
 
 Route::group(['middleware' => 'auth'], function () {
