@@ -56,4 +56,20 @@ class PlayerController
 
         return response()->json(["success" => true, "data" => "Set to inactive"]);
     }
+
+    public function deletePlayer(Request $request)
+    {
+        if(! $request->has("username"))
+            return response()->json(["success" => false]);
+
+        $username = $request->get("username");
+        try {
+            $player = Player::where("uname", "=", $username)->first();
+            $player->delete();
+        } catch (\Exception $e){
+            return response()->json(["success" => true, "data" => "Player doesn't exists"]);
+        }
+
+        return response()->json(["success" => true, "data" => "Deleted player"]);
+    }
 }
