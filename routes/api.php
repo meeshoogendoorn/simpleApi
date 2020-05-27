@@ -32,3 +32,4 @@ Route::post("player/create", "Api\PlayerController@createPlayer");
 Route::get("player", "Api\PlayerController@getPlayer");
 Route::get("player/inactive", "Api\PlayerController@setPlayerInactive");
 Route::get("player/delete", "Api\PlayerController@deletePlayer");
+Route::get("player/update", "Api\PlayerController@updatePlayer");

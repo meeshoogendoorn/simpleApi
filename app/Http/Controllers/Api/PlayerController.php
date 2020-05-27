@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Player;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -69,5 +70,15 @@ class PlayerController
         DB::table("players")->where("uname", "=", $username)->delete();
 
         return response()->json(["success" => true, "data" => "Deleted player"]);
+    }
+
+    public function updatePlayer(Request $request)
+    {
+        if(! $request->has("email"))
+            return response()->json(["success" => false]);
+
+        DB::table('players')->where('email', $request->get("email"))->update(['updated_at' => Carbon::now()]);
+
+        return response()->json(["success" => true]);
     }
 }

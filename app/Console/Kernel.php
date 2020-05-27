@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('players:deactivate')->cron("1 */2 * * *");
+//         $schedule->command('players:deactivate')->cron("1 */2 * * *");
+         $schedule->command('players:unused')->everyMinute();
     }
 
     /**
