@@ -29,6 +29,7 @@ class PlayerController
         $player = $players->random();
 
         $result = [
+            "id" => $player->id,
             "uname" => $player->uname,
             "email" => $player->email,
             "passw" => $player->passw,
