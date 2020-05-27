@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Player;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PlayerController
 {
@@ -63,12 +64,8 @@ class PlayerController
             return response()->json(["success" => false]);
 
         $username = $request->get("username");
-        try {
-            $player = Player::where("uname", "=", $username)->first();
-            $player->delete();
-        } catch (\Exception $e){
-            return response()->json(["success" => true, "data" => "Player doesn't exists"]);
-        }
+
+        DB::table("players")->where("uname", "=", $username)->delete();
 
         return response()->json(["success" => true, "data" => "Deleted player"]);
     }
