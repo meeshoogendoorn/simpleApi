@@ -24,8 +24,8 @@ class CreateProxysTable extends Migration
             $table->string("pass");
             $table->string("type");
             $table->string("country");
-            $table->timestamp("date");
-            $table->timestamp("date_end");
+            $table->timestamp("date")->nullable();
+            $table->timestamp("date_end")->nullable();
             $table->string("descr")->nullable();
             $table->boolean("active");
             $table->timestamps();
