@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
 //         $schedule->command('players:deactivate')->cron("1 */2 * * *");
          $schedule->command('players:unused')->everyMinute();
+         $schedule->command('proxies:check --assign')->hourly();
     }
 
     /**
