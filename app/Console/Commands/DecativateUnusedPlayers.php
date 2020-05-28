@@ -39,7 +39,7 @@ class DecativateUnusedPlayers extends Command
      */
     public function handle()
     {
-        DB::table("players")->where("updated_at", "<", Carbon::now()->subMinutes(2)->toDateTimeString())->update(["active" => false]);
+        DB::table("players")->where("updated_at", "<", Carbon::now()->subMinutes(15)->toDateTimeString())->update(["active" => false]);
         $this->info("Deactivated unused players");
     }
 }
