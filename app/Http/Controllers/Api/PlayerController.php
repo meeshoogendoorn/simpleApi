@@ -81,4 +81,17 @@ class PlayerController
 
         return response()->json(["success" => true]);
     }
+
+    public function getProxy(Request $request)
+    {
+        if(! $request->has("email"))
+            return response()->json(["success" => false]);
+
+        $email = $request->get("email");
+
+        $player = Player::where("email", "=", $email)->first();
+        $proxy = $player->get_proxy;
+
+        return response()->json(["success" => true, "data" => ["ip" => $proxy->ip, "port" => $proxy->port, "type" => $proxy->type, "user" => $proxy->user, "pass" => $proxy->pass]]);
+    }
 }

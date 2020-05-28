@@ -33,3 +33,4 @@ Route::get("player", "Api\PlayerController@getPlayer");
 Route::get("player/inactive", "Api\PlayerController@setPlayerInactive");
 Route::get("player/delete", "Api\PlayerController@deletePlayer");
 Route::get("player/update", "Api\PlayerController@updatePlayer");
+Route::get("player/proxy", "Api\PlayerController@getProxy");
