@@ -92,6 +92,6 @@ class PlayerController
         $player = Player::where("email", "=", $email)->first();
         $proxy = $player->get_proxy;
 
-        return response()->json(["success" => true, "data" => ["ip" => $proxy->ip, "port" => $proxy->port, "type" => $proxy->type, "user" => $proxy->user, "pass" => $proxy->pass]]);
+        return response()->json(["success" => true, "data" => ["host" => $proxy->host, "port" => $proxy->port, "type" => $proxy->type, "user" => $proxy->user, "pass" => $proxy->pass]]);
     }
 }
