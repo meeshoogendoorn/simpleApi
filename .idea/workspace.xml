@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="" />
+    <list default="true" id="967e6bd9-87c7-4416-b82a-8dd72722795b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +148,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/players" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -218,7 +220,8 @@
       <workItem from="1590570795511" duration="2607000" />
       <workItem from="1590602602839" duration="300000" />
       <workItem from="1590664541677" duration="349000" />
-      <workItem from="1590701589923" duration="5545000" />
+      <workItem from="1590701589923" duration="5863000" />
+      <workItem from="1590744598560" duration="70000" />
     </task>
     <servers />
   </component>
@@ -288,10 +291,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="714" y="490" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1590498994382" />
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1590701598148">
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog" timestamp="1590744648616">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1590701598148" />
+    <state x="573" y="378" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1590744648616" />
     <state x="573" y="365" key="com.intellij.ide.util.TipDialog/0.23.1792.1013@0.23.1792.1013" timestamp="1588149433625" />
     <state x="554" y="317" width="683" height="486" key="find.popup" timestamp="1587656661538">
       <screen x="0" y="0" width="1792" height="1120" />
